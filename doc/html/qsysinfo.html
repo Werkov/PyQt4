@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html><head><title>QSysInfo Class Reference</title><style>h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+td.postheader { font-family: sans-serif }
+tr.address { font-family: sans-serif }
+body { background: #ffffff; color: black; }
+</style></head><body><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr /><td align="left" valign="top" width="32"><img align="left" border="0" height="32" src="images/rb-logo.png" width="32" /></td><td width="1">&#160;&#160;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&#160;&#183; <a href="classes.html"><font color="#004faf">All Classes</font></a>&#160;&#183; <a href="modules.html"><font color="#004faf">Modules</font></a></td></table><h1 align="center">QSysInfo Class Reference<br /><sup><sup>[<a href="qtcore.html">QtCore</a> module]</sup></sup></h1><p>The QSysInfo class provides information about the system.
+<a href="#details">More...</a></p>
+
+<h3>Types</h3><ul><li><div class="fn" />enum <b><a href="qsysinfo.html#Endian-enum">Endian</a></b> { BigEndian, LittleEndian, ByteOrder }</li><li><div class="fn" />enum <b><a href="qsysinfo.html#Sizes-enum">Sizes</a></b> { WordSize }</li></ul><h3>Methods</h3><ul><li><div class="fn" /><b><a href="qsysinfo.html#QSysInfo">__init__</a></b> (<i>self</i>)</li><li><div class="fn" /><b><a href="qsysinfo.html#QSysInfo-2">__init__</a></b> (<i>self</i>, QSysInfo)</li></ul><a name="details" /><hr /><h2>Detailed Description</h2><p>The QSysInfo class provides information about the system.</p>
+<ul>
+<li><a href="qsysinfo.html#Sizes-enum">WordSize</a> specifies the
+size of a pointer for the platform on which the application is
+compiled.</li>
+<li><a href="qsysinfo.html#Endian-enum">ByteOrder</a> specifies
+whether the platform is big-endian or little-endian.</li>
+<li><a href="qsysinfo.html#WindowsVersion-var">WindowsVersion</a>
+specifies the version of the Windows operating system on which the
+application is run (Windows only)</li>
+<li><a href="qsysinfo.html#MacintoshVersion-var">MacintoshVersion</a> specifies
+the version of the Macintosh operating system on which the
+application is run (Mac only).</li>
+</ul>
+<p>Some constants are defined only on certain platforms. You can
+use the preprocessor symbols <a href="qtcore.html#Q_WS_WIN">Q_WS_WIN</a> and <a href="qtcore.html#Q_WS_MAC">Q_WS_MAC</a> to test that the application
+is compiled under Windows or Mac.</p>
+<hr /><h2>Type Documentation</h2><h3 class="fn"><a name="Endian-enum" />QSysInfo.Endian</h3><table class="valuelist">
+<tr class="odd" valign="top">
+<th class="tblConst">Constant</th>
+<th class="tblval">Value</th>
+<th class="tbldscr">Description</th>
+</tr>
+<tr>
+<td class="topAlign"><tt>QSysInfo.BigEndian</tt></td>
+<td class="topAlign"><tt>0</tt></td>
+<td class="topAlign">Big-endian byte order (also called Network
+byte order)</td>
+</tr>
+<tr>
+<td class="topAlign"><tt>QSysInfo.LittleEndian</tt></td>
+<td class="topAlign"><tt>1</tt></td>
+<td class="topAlign">Little-endian byte order</td>
+</tr>
+<tr>
+<td class="topAlign"><tt>QSysInfo.ByteOrder</tt></td>
+<td class="topAlign"><tt>&lt;platform-dependent&gt;</tt></td>
+<td class="topAlign">Equals BigEndian or LittleEndian, depending on
+the platform's byte order.</td>
+</tr>
+</table>
+
+
+<h3 class="fn"><a name="Sizes-enum" />QSysInfo.Sizes</h3><p>This enum provides platform-specific information about the sizes
+of data structures used by the underlying architecture.</p>
+<table class="valuelist">
+<tr class="odd" valign="top">
+<th class="tblConst">Constant</th>
+<th class="tblval">Value</th>
+<th class="tbldscr">Description</th>
+</tr>
+<tr>
+<td class="topAlign"><tt>QSysInfo.WordSize</tt></td>
+<td class="topAlign"><tt>( sizeof( void * ) &lt;&lt;3 )</tt></td>
+<td class="topAlign">The size in bits of a pointer for the platform
+on which the application is compiled (32 or 64).</td>
+</tr>
+</table>
+
+
+<hr /><h2>Method Documentation</h2><h3 class="fn"><a name="QSysInfo" />QSysInfo.__init__ (<i>self</i>)</h3><h3 class="fn"><a name="QSysInfo-2" />QSysInfo.__init__ (<i>self</i>, <a href="qsysinfo.html">QSysInfo</a>)</h3><address><hr /><div align="center"><table border="0" cellspacing="0" width="100%"><tr class="address"><td align="left" width="25%">PyQt&#160;4.9.1 for X11</td><td align="center" width="50%">Copyright &#169; <a href="http://www.riverbankcomputing.com">Riverbank&#160;Computing&#160;Ltd</a> and <a href="http://www.qtsoftware.com">Nokia</a> 2011</td><td align="right" width="25%">Qt&#160;4.8.0</td></tr></table></div></address></body></html>

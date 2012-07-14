@@ -1,0 +1,149 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The Legacy DBus Support Module &mdash; PyQt 4.9.1 Reference Guide</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '4.9.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/logo_tn.ico"/>
+    <link rel="top" title="PyQt 4.9.1 Reference Guide" href="index.html" />
+    <link rel="next" title="Selecting Incompatible APIs" href="incompatible_apis.html" />
+    <link rel="prev" title="Internationalisation of PyQt Applications" href="i18n.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="incompatible_apis.html" title="Selecting Incompatible APIs"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="i18n.html" title="Internationalisation of PyQt Applications"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">PyQt 4.9.1 Reference Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-legacy-dbus-support-module">
+<span id="ref-dbus"></span><h1>The Legacy DBus Support Module<a class="headerlink" href="#the-legacy-dbus-support-module" title="Permalink to this headline">¶</a></h1>
+<p>Note that There are no plans for the standard <tt class="docutils literal"><span class="pre">dbus-python</span></tt> language bindings
+package to be ported to Python v3 and so it is recommended that new
+applications use the <tt class="xref py py-mod docutils literal"><span class="pre">QtDBus</span></tt> module instead.</p>
+<p>The DBus support module is installed as <tt class="xref py py-mod docutils literal"><span class="pre">dbus.mainloop.qt</span></tt> and provides
+support for the Qt event loop to <tt class="docutils literal"><span class="pre">dbus-python</span></tt>.  The module&#8217;s API is almost
+identical to that of the <tt class="xref py py-mod docutils literal"><span class="pre">dbus.mainloop.glib</span></tt> modules that provides
+support for the GLib event loop.</p>
+<p>The <tt class="xref py py-mod docutils literal"><span class="pre">dbus.mainloop.qt</span></tt> module contains the following function.</p>
+<dl class="function">
+<dt id="DBusQtMainLoop">
+<tt class="descname">DBusQtMainLoop</tt><big>(</big><em>set_as_default=False</em><big>)</big><a class="headerlink" href="#DBusQtMainLoop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <tt class="docutils literal"><span class="pre">dbus.mainloop.NativeMainLoop</span></tt> object that uses the the Qt event
+loop.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>set_as_default</strong> &#8211; is optionally set to make the main loop instance the default for all
+new Connection and Bus instances.  It may only be specified as a
+keyword argument, and not as a positional argument.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>The following code fragment is all that is normally needed to set up the
+standard <tt class="docutils literal"><span class="pre">dbus-python</span></tt> language bindings package to be used with PyQt:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">dbus.mainloop.qt</span> <span class="kn">import</span> <span class="n">DBusQtMainLoop</span>
+
+<span class="n">DBusQtMainLoop</span><span class="p">(</span><span class="n">set_as_default</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="i18n.html"
+                        title="previous chapter">Internationalisation of PyQt Applications</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="incompatible_apis.html"
+                        title="next chapter">Selecting Incompatible APIs</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="incompatible_apis.html" title="Selecting Incompatible APIs"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="i18n.html" title="Internationalisation of PyQt Applications"
+             >previous</a> |</li>
+        <li><a href="index.html">PyQt 4.9.1 Reference Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011 Riverbank Computing Limited.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+  </body>
+</html>
